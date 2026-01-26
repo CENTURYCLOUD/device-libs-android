@@ -2,19 +2,19 @@ plugins {
     id 'maven-publish'
 }
 
-// Esto le dice a JitPack que el grupo es tu usuario
 group = 'com.github.P4drote'
-version = '1.0.1'
+version = '1.0.3' // Subimos versión para forzar limpieza
 
 publishing {
     publications {
         maven(MavenPublication) {
             groupId = 'com.github.P4drote'
             artifactId = 'device-sdk'
-            version = '1.0.1'
-            
-            // Aquí le decimos que el "producto" es el archivo AAR
+            version = '1.0.3'
             artifact("libs/DeviceAPI_ver20231208_release.aar")
         }
     }
 }
+
+task clean {}
+task assemble {}
