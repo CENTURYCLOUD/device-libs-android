@@ -1,28 +1,20 @@
 plugins {
-    id 'com.android.library'
     id 'maven-publish'
 }
 
-android {
-    compileSdk 34
-    namespace "com.century.devicesdk"
-    
-    // Esto es necesario para que Gradle sepa qué procesar
-    publishing {
-        singleVariant("release")
-    }
-}
+// Esto le dice a JitPack que el grupo es tu usuario
+group = 'com.github.P4drote'
+version = '1.0.1'
 
-afterEvaluate {
-    publishing {
-        publications {
-            release(MavenPublication) {
-                groupId = 'com.github.P4drote'
-                artifactId = 'device-sdk'
-                version = '1.0.0'
-                // Esta línea apunta al archivo físico
-                artifact("libs/DeviceAPI_ver20231208_release.aar")
-            }
+publishing {
+    publications {
+        maven(MavenPublication) {
+            groupId = 'com.github.P4drote'
+            artifactId = 'device-sdk'
+            version = '1.0.1'
+            
+            // Aquí le decimos que el "producto" es el archivo AAR
+            artifact("libs/DeviceAPI_ver20231208_release.aar")
         }
     }
 }
