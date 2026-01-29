@@ -1,4 +1,4 @@
-\# Device Libs Android 📱
+# Device Libs Android 📱
 
 
 
@@ -6,11 +6,11 @@ Librería de lógica centralizada para la gestión de dispositivos Century Cloud
 
 
 
-\## 🚀 Instalación rápida
+## 🚀 Instalación rápida
 
 
 
-\### 1. Agregar JitPack a settings.gradle
+### 1. Agregar JitPack a settings.gradle
 
 ```groovy
 
@@ -32,7 +32,7 @@ dependencyResolutionManagement {
 
 
 
-\### 2. Agregar la dependencia en build.gradle. 
+### 2. Agregar la dependencia en build.gradle. 
 
 
 
@@ -56,21 +56,21 @@ dependencies {
 
 
 
-\### 📌 Control de Versiones (Basado en SDK)
+### 📌 Control de Versiones (Basado en SDK)
 
 Para mantener la compatibilidad con hardware antiguo, utilizamos las fechas de los SDKs del fabricante como identificadores de versión. En el ejemplo anterior usamos la librería de diciembre del 2023(2023.12.08).
 
 
 
-\### 📜 Changelog (Historial de Cambios)
+### 📜 Changelog (Historial de Cambios)
 
-\[2023.12.08] - 2026-01-26
+[2023.12.08] - 2026-01-26
 
-\- SDK Integrado: DeviceAPI\_ver20231208\_release.aar.
+- SDK Integrado: DeviceAPI\_ver20231208\_release.aar.
 
-\- Compatibilidad: Software Legacy.
+- Compatibilidad: Software Legacy.
 
-\- Cambios: Primera versión estable migrada al repositorio de Century Cloud.
+- Cambios: Primera versión estable migrada al repositorio de Century Cloud.
 
 
 
