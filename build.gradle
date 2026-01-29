@@ -2,16 +2,16 @@ plugins {
     id 'maven-publish'
 }
 
-group = 'com.github.P4drote'
-version = '1.0.3' // Subimos versión para forzar limpieza
+group = 'com.github.CENTURYCLOUD'
+version = '2025.02.09'
 
 publishing {
     publications {
         maven(MavenPublication) {
-            groupId = 'com.github.P4drote'
+            groupId = 'com.github.CENTURYCLOUD'
             artifactId = 'device-sdk'
-            version = '1.0.3'
-            artifact("libs/DeviceAPI_ver20231208_release.aar")
+            version = '2025.02.09'
+            artifact("libs/DeviceAPI_ver20250209_release.aar")
         }
     }
 }
