@@ -15,16 +15,15 @@ Librería de lógica centralizada para la gestión de dispositivos Century Cloud
 ```groovy
 
 dependencyResolutionManagement {
+   repositories {
 
-&nbsp;   repositories {
+       google()
 
-&nbsp;       google()
+       mavenCentral()
 
-&nbsp;       mavenCentral()
+       maven { url "\[https://jitpack.io](https://jitpack.io)" }
 
-&nbsp;       maven { url "\[https://jitpack.io](https://jitpack.io)" }
-
-&nbsp;   }
+   }
 
 }
 
@@ -48,7 +47,7 @@ Para mantener la compatibilidad con hardware antiguo, utilizamos las fechas de l
 
 dependencies {
 
-&nbsp;   implementation 'com.github.CENTURYCLOUD:device-libs-android:deviceApi:2023.12.08'
+   implementation 'com.github.CENTURYCLOUD:device-libs-android:deviceApi:2023.12.08'
 
 }
 
