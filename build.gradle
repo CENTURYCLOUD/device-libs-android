@@ -3,33 +3,24 @@ plugins {
 }
 
 group = 'com.github.CENTURYCLOUD'
-version = 'ZEBRA-V8' 
+version = 'ZEBRA-V9-FINAL' // Nombre nuevo para limpiar todo
 
 publishing {
     publications {
-        reader(MavenPublication) {
+        maven(MavenPublication) {
             groupId = 'com.github.CENTURYCLOUD'
-            artifactId = 'zebra-reader-lib'
-            version = 'ZEBRA-V8'
-            artifact("libs/API3_READER-release-2.0.2.124.aar")
-        }
-        common(MavenPublication) {
-            groupId = 'com.github.CENTURYCLOUD'
-            artifactId = 'zebra-common-lib'
-            version = 'ZEBRA-V8'
-            artifact("libs/API3_CMN-release-2.0.2.124.aar")
-        }
-        transport(MavenPublication) {
-            groupId = 'com.github.CENTURYCLOUD'
-            artifactId = 'zebra-transport-lib'
-            version = 'ZEBRA-V8'
-            artifact("libs/API3_TRANSPORT-release-2.0.2.124.aar")
+            artifactId = 'device-zebra-sdk' 
+            version = 'ZEBRA-V9-FINAL'
+            
+            // Usamos la misma técnica de la V-TOTAL
+            artifact("libs/API3_READER-release-2.0.2.124.aar") { classifier "reader" }
+            artifact("libs/API3_CMN-release-2.0.2.124.aar") { classifier "common" }
+            artifact("libs/API3_TRANSPORT-release-2.0.2.124.aar") { classifier "transport" }
         }
     }
 }
 
-// REDIRECCIÓN MAESTRA: Cuando JitPack llame a install, 
-// Gradle realmente publicará los archivos donde JitPack los busca.
+// EL MOTOR QUE FALTABA EN LA V-TOTAL ORIGINAL:
 task install {
     dependsOn publishToMavenLocal
 }
