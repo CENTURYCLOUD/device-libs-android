@@ -1,14 +1,14 @@
 plugins { id 'maven-publish' }
-group = 'com.github.CENTURYCLOUD.zebra-reader' // Grupo Único
+group = 'com.github.CENTURYCLOUD.zebra-common' // Grupo Único
 version = '1.0.0'
 
 publishing {
     publications {
         maven(MavenPublication) {
-            groupId = 'com.github.CENTURYCLOUD.zebra-reader'
-            artifactId = 'reader'
+            groupId = 'com.github.CENTURYCLOUD.zebra-common'
+            artifactId = 'common'
             version = '1.0.0'
-            artifact("libs/API3_READER-release-2.0.2.124.aar")
+            artifact("libs/API3_CMN-release-2.0.2.124.aar")
         }
     }
 }
