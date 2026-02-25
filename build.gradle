@@ -30,3 +30,6 @@ publishing {
         }
     }
 }
+
+task assemble {} 
+task install {}
