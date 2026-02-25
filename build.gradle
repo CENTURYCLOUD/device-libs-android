@@ -3,45 +3,20 @@ plugins {
 }
 
 group = 'com.github.CENTURYCLOUD'
-version = 'ZEBRA-V10'
+version = 'ZEBRA-FULL-STACK' 
 
 publishing {
     publications {
-        zebraFull(MavenPublication) {
+        zebra(MavenPublication) {
             groupId = 'com.github.CENTURYCLOUD'
-            artifactId = 'zebra-sdk'
-            version = 'ZEBRA-V10'
+            artifactId = 'zebra-sdk-complete'
+            version = '1.0.0'
             
+            // EL EQUIPO COMPLETO
             artifact("libs/API3_READER-release-2.0.2.124.aar")
-            
-            // Esto genera un archivo que le dice a Android que cargue 
-            // los otros dos como si fueran parte del mismo cuerpo
-            pom.withXml {
-                def dependenciesNode = asNode().appendNode('dependencies')
-                
-                def dep1 = dependenciesNode.appendNode('dependency')
-                dep1.appendNode('groupId', 'com.github.CENTURYCLOUD')
-                dep1.appendNode('artifactId', 'zebra-common')
-                dep1.appendNode('version', 'ZEBRA-V10')
-                
-                def dep2 = dependenciesNode.appendNode('dependency')
-                dep2.appendNode('groupId', 'com.github.CENTURYCLOUD')
-                dep2.appendNode('artifactId', 'zebra-transport')
-                dep2.appendNode('version', 'ZEBRA-V10')
-            }
-        }
-        // Publicamos los otros dos de apoyo
-        common(MavenPublication) {
-            groupId = 'com.github.CENTURYCLOUD'
-            artifactId = 'zebra-common'
-            version = 'ZEBRA-V10'
-            artifact("libs/API3_CMN-release-2.0.2.124.aar")
-        }
-        transport(MavenPublication) {
-            groupId = 'com.github.CENTURYCLOUD'
-            artifactId = 'zebra-transport'
-            version = 'ZEBRA-V10'
-            artifact("libs/API3_TRANSPORT-release-2.0.2.124.aar")
+            artifact("libs/API3_CMN-release-2.0.2.124.aar") { classifier "common" }
+            artifact("libs/API3_TRANSPORT-release-2.0.2.124.aar") { classifier "transport" }
+            artifact("libs/API3_ASCII-release-2.0.2.124.aar") { classifier "ascii" } // LA PIEZA CLAVE
         }
     }
 }
