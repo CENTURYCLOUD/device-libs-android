@@ -3,22 +3,30 @@ plugins {
 }
 
 group = 'com.github.CENTURYCLOUD'
-version = '2026.02.25.COMBO' // Nombre nuevo para no usar caché vieja
+version = '1.0.0' // La versión puede ser la misma porque el nombre del artefacto cambia
 
 publishing {
     publications {
-        maven(MavenPublication) {
+        // Identidad 1
+        readerPub(MavenPublication) {
             groupId = 'com.github.CENTURYCLOUD'
-            artifactId = 'zebra-all'
-            version = '2026.02.25.COMBO'
-            
-            // Los tres en el mismo paquete
-            artifact("libs/API3_READER-release-2.0.2.124.aar") { classifier "reader" }
-            artifact("libs/API3_CMN-release-2.0.2.124.aar") { classifier "common" }
-            artifact("libs/API3_TRANSPORT-release-2.0.2.124.aar") { classifier "transport" }
+            artifactId = 'zebra-reader-lib' // Nombre único
+            version = '1.0.0'
+            artifact("libs/API3_READER-release-2.0.2.124.aar")
+        }
+        // Identidad 2
+        commonPub(MavenPublication) {
+            groupId = 'com.github.CENTURYCLOUD'
+            artifactId = 'zebra-common-lib' // Nombre único
+            version = '1.0.0'
+            artifact("libs/API3_CMN-release-2.0.2.124.aar")
+        }
+        // Identidad 3
+        transportPub(MavenPublication) {
+            groupId = 'com.github.CENTURYCLOUD'
+            artifactId = 'zebra-transport-lib' // Nombre único
+            version = '1.0.0'
+            artifact("libs/API3_TRANSPORT-release-2.0.2.124.aar")
         }
     }
 }
-
-task clean(type: Delete) { delete rootProject.buildDir }
-task assemble {}
