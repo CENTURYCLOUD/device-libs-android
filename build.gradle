@@ -3,32 +3,18 @@ plugins {
 }
 
 group = 'com.github.CENTURYCLOUD'
-version = '2026.02.25'
+version = '2026.02.25.FINAL' // Cambiamos versión para limpiar caché
 
 publishing {
     publications {
-        zebraReader(MavenPublication) {
+        maven(MavenPublication) {
             groupId = 'com.github.CENTURYCLOUD'
-            artifactId = 'zebra-reader'
-            version = '2.0.2.124'
+            artifactId = 'device-zebra-reader' // Usamos el nombre del repo directamente
+            version = '2026.02.25.FINAL'
             artifact("libs/API3_READER-release-2.0.2.124.aar")
-        }
-        zebraCommon(MavenPublication) {
-            groupId = 'com.github.CENTURYCLOUD'
-            artifactId = 'zebra-common'
-            version = '2.0.2.124'
-            artifact("libs/API3_CMN-release-2.0.2.124.aar")
-        }
-        zebraTransport(MavenPublication) {
-            groupId = 'com.github.CENTURYCLOUD'
-            artifactId = 'zebra-transport'
-            version = '2.0.2.124'
-            artifact("libs/API3_TRANSPORT-release-2.0.2.124.aar")
         }
     }
 }
 
-task clean(type: Delete) {
-    delete rootProject.buildDir
-}
+task clean(type: Delete) { delete rootProject.buildDir }
 task assemble {}
