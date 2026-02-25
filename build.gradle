@@ -3,30 +3,34 @@ plugins {
 }
 
 group = 'com.github.CENTURYCLOUD'
-version = 'ZEBRA-V7' // <--- La versión base del proyecto ahora es el Tag
+version = 'ZEBRA-V8' 
 
 publishing {
     publications {
         reader(MavenPublication) {
             groupId = 'com.github.CENTURYCLOUD'
             artifactId = 'zebra-reader-lib'
-            version = 'ZEBRA-V7' // <--- Fijo aquí también
+            version = 'ZEBRA-V8'
             artifact("libs/API3_READER-release-2.0.2.124.aar")
         }
         common(MavenPublication) {
             groupId = 'com.github.CENTURYCLOUD'
             artifactId = 'zebra-common-lib'
-            version = 'ZEBRA-V7' // <--- Fijo aquí también
+            version = 'ZEBRA-V8'
             artifact("libs/API3_CMN-release-2.0.2.124.aar")
         }
         transport(MavenPublication) {
             groupId = 'com.github.CENTURYCLOUD'
             artifactId = 'zebra-transport-lib'
-            version = 'ZEBRA-V7' // <--- Fijo aquí también
+            version = 'ZEBRA-V8'
             artifact("libs/API3_TRANSPORT-release-2.0.2.124.aar")
         }
     }
 }
 
-task install {}
+// REDIRECCIÓN MAESTRA: Cuando JitPack llame a install, 
+// Gradle realmente publicará los archivos donde JitPack los busca.
+task install {
+    dependsOn publishToMavenLocal
+}
 task assemble {}
