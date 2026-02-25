@@ -3,15 +3,15 @@ plugins {
 }
 
 group = 'com.github.CENTURYCLOUD'
-version = '2026.02.25.FINAL' // Cambiamos versión para limpiar caché
+version = '2026.02.25.CMN' // Versión específica para esta pieza
 
 publishing {
     publications {
         maven(MavenPublication) {
             groupId = 'com.github.CENTURYCLOUD'
-            artifactId = 'device-zebra-reader' // Usamos el nombre del repo directamente
-            version = '2026.02.25.FINAL'
-            artifact("libs/API3_READER-release-2.0.2.124.aar")
+            artifactId = 'device-zebra-cmn' 
+            version = '2026.02.25.CMN'
+            artifact("libs/API3_CMN-release-2.0.2.124.aar")
         }
     }
 }
