@@ -2,34 +2,32 @@ plugins {
     id 'maven-publish'
 }
 
+// QUITAMOS el version = '1.0.0' de aquí adentro para que no confunda a JitPack
 group = 'com.github.CENTURYCLOUD'
-version = '1.0.0' // La versión puede ser la misma porque el nombre del artefacto cambia
 
 publishing {
     publications {
-        // Identidad 1
         readerPub(MavenPublication) {
             groupId = 'com.github.CENTURYCLOUD'
-            artifactId = 'zebra-reader-lib' // Nombre único
-            version = '1.0.0'
+            artifactId = 'zebra-reader-lib'
+            version = project.version // <--- USAR ESTO
             artifact("libs/API3_READER-release-2.0.2.124.aar")
         }
-        // Identidad 2
         commonPub(MavenPublication) {
             groupId = 'com.github.CENTURYCLOUD'
-            artifactId = 'zebra-common-lib' // Nombre único
-            version = '1.0.0'
+            artifactId = 'zebra-common-lib'
+            version = project.version // <--- USAR ESTO
             artifact("libs/API3_CMN-release-2.0.2.124.aar")
         }
-        // Identidad 3
         transportPub(MavenPublication) {
             groupId = 'com.github.CENTURYCLOUD'
-            artifactId = 'zebra-transport-lib' // Nombre único
-            version = '1.0.0'
+            artifactId = 'zebra-transport-lib'
+            version = project.version // <--- USAR ESTO
             artifact("libs/API3_TRANSPORT-release-2.0.2.124.aar")
         }
     }
 }
 
-task assemble {} 
+// Esto es lo que JitPack necesita para no romperse
 task install {}
+task assemble {}
