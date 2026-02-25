@@ -31,3 +31,4 @@ publishing {
 task clean(type: Delete) {
     delete rootProject.buildDir
 }
+task assemble {}
