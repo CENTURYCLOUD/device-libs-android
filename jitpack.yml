@@ -1,7 +1,6 @@
 jdk:
-  - openjdk17
+  - openjdk11
 before_install:
-  - sdk install gradle 8.5
-  - sdk use gradle 8.5
+  - chmod +x gradlew
 install:
-  - gradle publishToMavenLocal -Dversion=$FINAL_VERSION
+  - ./gradlew publishToMavenLocal -Dversion=$FINAL_VERSION
