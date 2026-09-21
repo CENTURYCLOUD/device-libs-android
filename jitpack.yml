@@ -1,4 +1,4 @@
 jdk:
   - openjdk17
 install:
-  - gradle publishToMavenLocal -Dversion=$FINAL_VERSION
+  - ./gradlew publishToMavenLocal -Dversion=$FINAL_VERSION
