@@ -4,9 +4,13 @@ plugins {
 }
 
 group = 'com.github.CENTURYCLOUD'
-
-// Permite a JitPack o Gradle pasar la versión dinámicamente si existe, o usar un fallback
 version = project.hasProperty('version') && project.version != 'unspecified' ? project.version : '2025.09.26'
+
+// Crear una tarea jar personalizada para evitar que genere un jar vacío
+task customJar(type: Jar) {
+    archiveBaseName = 'device-libs-desktop'
+    from zipTree(file("libs/ReaderAPI20250926.jar"))
+}
 
 publishing {
     publications {
@@ -14,7 +18,8 @@ publishing {
             groupId = 'com.github.CENTURYCLOUD'
             artifactId = 'device-libs-desktop'
             
-            artifact("libs/ReaderAPI20250926.jar")
+            // Publica el JAR generado a partir de la librería del fabricante
+            artifact(customJar)
         }
     }
 }
