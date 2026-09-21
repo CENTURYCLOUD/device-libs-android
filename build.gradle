@@ -4,9 +4,7 @@ plugins {
 }
 
 group = 'com.github.CENTURYCLOUD'
-version = project.hasProperty('version') && project.version != 'unspecified' ? project.version : '2025.09.26'
 
-// Crear una tarea jar personalizada para evitar que genere un jar vacío
 task customJar(type: Jar) {
     archiveBaseName = 'device-libs-desktop'
     from zipTree(file("libs/ReaderAPI20250926.jar"))
@@ -18,7 +16,6 @@ publishing {
             groupId = 'com.github.CENTURYCLOUD'
             artifactId = 'device-libs-desktop'
             
-            // Publica el JAR generado a partir de la librería del fabricante
             artifact(customJar)
         }
     }
