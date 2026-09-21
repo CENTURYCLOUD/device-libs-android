@@ -18,7 +18,7 @@ publishing {
     publications {
         mavenJava(MavenPublication) {
             groupId = group
-            artifactId = 'device-libs-desktop'
+            artifactId = 'device-libs-android' 
             version = project.version
             
             artifact(customJar)
