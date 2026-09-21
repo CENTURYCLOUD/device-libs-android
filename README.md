@@ -61,9 +61,13 @@ Para mantener la compatibilidad con hardware antiguo, utilizamos las fechas de l
 
 
 
-### 📜 Changelog (Historial de Cambios)
+## 📜 Changelog (Historial de Cambios)
 
-[2023.12.08] - 2026-01-26
+### [2025.09.26] - 2026-09-21
+
+- Feat: Agregada librería para windows
+
+### [2023.12.08] - 2026-01-26
 
 - SDK Integrado: DeviceAPI\_ver20231208\_release.aar.
 
