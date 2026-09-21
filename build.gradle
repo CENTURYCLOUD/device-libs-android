@@ -4,6 +4,8 @@ plugins {
 }
 
 group = 'com.github.CENTURYCLOUD'
+// Asegurar que exista una versión por defecto si no se pasa por parámetro
+version = project.hasProperty('version') && project.property('version') != 'unspecified' ? project.property('version') : '1.0.0'
 
 task customJar(type: Jar) {
     archiveBaseName = 'device-libs-desktop'
@@ -13,8 +15,9 @@ task customJar(type: Jar) {
 publishing {
     publications {
         mavenJava(MavenPublication) {
-            groupId = 'com.github.CENTURYCLOUD'
+            groupId = group
             artifactId = 'device-libs-desktop'
+            version = project.version // Utiliza la versión definida arriba
             
             artifact(customJar)
         }
