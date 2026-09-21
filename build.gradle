@@ -1,21 +1,20 @@
 plugins {
+    id 'java-library'
     id 'maven-publish'
 }
 
 group = 'com.github.CENTURYCLOUD'
-version = '2025.09.26' 
+
+// Permite a JitPack o Gradle pasar la versión dinámicamente si existe, o usar un fallback
+version = project.hasProperty('version') && project.version != 'unspecified' ? project.version : '2025.09.26'
 
 publishing {
     publications {
-        zebra(MavenPublication) {
+        mavenJava(MavenPublication) {
             groupId = 'com.github.CENTURYCLOUD'
             artifactId = 'device-libs-desktop'
-            version = '2025.09.26'
             
             artifact("libs/ReaderAPI20250926.jar")
         }
     }
 }
-
-task install { dependsOn publishToMavenLocal }
-task assemble {}
