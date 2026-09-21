@@ -1,4 +1,7 @@
 jdk:
   - openjdk17
+before_install:
+  - sdk install gradle 8.5
+  - sdk use gradle 8.5
 install:
-  - ./gradlew publishToMavenLocal -Dversion=$FINAL_VERSION
+  - gradle publishToMavenLocal -Dversion=$FINAL_VERSION
