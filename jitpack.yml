@@ -3,4 +3,4 @@ jdk:
 before_install:
   - chmod +x gradlew
 install:
-  - ./gradlew publishToMavenLocal -Dversion=$FINAL_VERSION
+  - ./gradlew customJar publishToMavenLocal -Pversion=$FINAL_VERSION
