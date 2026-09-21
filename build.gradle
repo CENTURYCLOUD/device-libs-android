@@ -3,20 +3,16 @@ plugins {
 }
 
 group = 'com.github.CENTURYCLOUD'
-version = 'ZEBRA-FULL-STACK' 
+version = '2025.09.26' 
 
 publishing {
     publications {
         zebra(MavenPublication) {
             groupId = 'com.github.CENTURYCLOUD'
-            artifactId = 'zebra-sdk-complete'
-            version = '1.0.0'
+            artifactId = 'device-libs-desktop'
+            version = '2025.09.26'
             
-            // EL EQUIPO COMPLETO
-            artifact("libs/API3_READER-release-2.0.2.124.aar")
-            artifact("libs/API3_CMN-release-2.0.2.124.aar") { classifier "common" }
-            artifact("libs/API3_TRANSPORT-release-2.0.2.124.aar") { classifier "transport" }
-            artifact("libs/API3_ASCII-release-2.0.2.124.aar") { classifier "ascii" } // LA PIEZA CLAVE
+            artifact("libs/ReaderAPI20250926.jar")
         }
     }
 }
